@@ -11,28 +11,31 @@ and proper representation of other attributes.
 
 It is applicable to any GCP service that delivers logs via [Logging agent](https://cloud.google.com/logging/docs/agent/logging/configuration#special-fields).
 
+For example, CloudRun, etc.
+
 
 ## Usage
 
 ### Override default attributes
 
 ```go
-    package example
+package example
 
-    import (
-        "github.com/vlad-tokarev/slog-GCP"
-		"log/slog"
-        "os"
-    )
+import (
+	"github.com/vlad-tokarev/slog-GCP"
+	"log/slog"
+	"os"
+)
 
-    func main() {
-    
-        logger := slog.New(slog.NewJSONHandler(os.Stderr, &slog.HandlerOptions{
-            ReplaceAttr: sloggcp.ReplaceAttr,
-            AddSource:   true,
-            Level:       slog.LevelDebug,
-        }))
-        slog.SetDefault(logger)
-    }
+func main() {
+
+	logger := slog.New(slog.NewJSONHandler(os.Stderr, &slog.HandlerOptions{
+		ReplaceAttr: sloggcp.ReplaceAttr,
+		AddSource:   true,
+		Level:       slog.LevelDebug,
+	}))
+	slog.SetDefault(logger)
+}
+
 ```
 
