@@ -1,7 +1,7 @@
 package sloggcp_test
 
 import (
-	sloggcp "github.com/vlad-tokarev/slog-GCP"
+	"github.com/vlad-tokarev/sloggcp"
 	"log/slog"
 	"os"
 	"testing"

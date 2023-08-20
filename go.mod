@@ -1,4 +1,4 @@
-module "github.com/vlad-tokarev/slog-GCP"
+module "github.com/vlad-tokarev/sloggcp"
 
 go 1.21
 
